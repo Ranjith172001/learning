@@ -69,32 +69,28 @@ _deprecated_file(
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 								<li class="nav-item">
 									<a class="nav-link active" aria-current="page" href="#">Home</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Link</a>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-										Dropdown
-									</a>
-									<ul class="dropdown-menu">
-										<li><a class="dropdown-item" href="#">Action</a></li>
-										<li><a class="dropdown-item" href="#">Another action</a></li>
-										<li>
-											<hr class="dropdown-divider">
-										</li>
-										<li><a class="dropdown-item" href="#">Something else here</a></li>
-									</ul>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-								</li>
+								<?php 
+                                if ( is_user_logged_in()){
+									echo '<li><span class="nav-link" href="#">Yes</span></li>';
+								}else{
+									echo '<li><a class="nav-link" href="#">Register</a></li>';
+								}
+								
+								?>
 							</ul>
 							<div class="d-flex">
-								<button class="btn btn-outline-success" type="submit">Register</button>
+								<?php
+								if( is_user_logged_in() ) {
+									$current_user = wp_get_current_user();
+									echo '<a class="btn btn-outline-success" href="' . esc_url( wp_logout_url( get_permalink() ) ) . '">Logout</a>';
+								} else {
+									echo '<a class="btn btn-outline-success me-2" href="' . esc_url( wp_login_url() ) . '">Login</a>';
+								}
+								?>
 							</div>
 						</div>
 					</div>

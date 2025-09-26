@@ -1,10 +1,10 @@
 /* Default Styles */
-
+@import 'fonts';
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Jost', sans-serif;
     font-size: 16px;
     background: #f9f9f9;
     color: #222;
@@ -71,3 +71,4 @@ button {
         background: #005fa3;
     }
 }
+
