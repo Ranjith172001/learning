@@ -17,5 +17,8 @@ function learning_theme_enqueue_assets() {
 
     // Optional: Enqueue Bootstrap JS (from CDN)
     wp_enqueue_script('bootstrap-js',  get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.bundle.min.js', array('jquery'), null, true);
+
+    // Optional: Custom JS
+    wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'learning_theme_enqueue_assets');
