@@ -1,0 +1,16 @@
+{
+  "liveSassCompile.settings.includeItems": [
+    "/wp-content/themes/learning_theme/assets/scss/style.scss"
+  ],
+  "liveSassCompile.settings.excludeList": [
+    "**/node_modules/**",
+    "/wp-content/themes/learning_theme/assets/scss/_*.scss"
+  ],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/wp-content/themes/learning_theme/assets/css"
+    }
+  ]
+}
