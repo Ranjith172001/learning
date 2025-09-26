@@ -16,13 +16,12 @@ _deprecated_file(
 );
 ?>
 
-<hr />
-<div id="footer" role="contentinfo">
+<div id="footer" role="contentinfo" class="p-3 bg-dark-subtle">
 <!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<p class="text-center">&copy; Copyrights From Ranjith</p>
+				<p class="text-center mb-0">&copy; Copyrights From Ranjith</p>
 			</div>
 		</div>
 	</div>

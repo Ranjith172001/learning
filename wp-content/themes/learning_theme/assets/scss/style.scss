@@ -72,3 +72,36 @@ button {
     }
 }
 
+//Homepage Styles
+.banner{
+    background: url('../images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    height: 590px;
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+    }
+
+    p {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .btn {
+        background: #ff5722;
+        color: #fff;
+        padding: 0.75em 1.5em;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+            background: #e64a19;
+        }
+    }
+}
