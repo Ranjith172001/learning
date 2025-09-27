@@ -59,31 +59,17 @@ textarea {
     box-sizing: border-box;
 }
 
-button {
-    cursor: pointer;
-    background: #007acc;
-    color: #fff;
-    border: none;
-    transition: background 0.2s;
-
-    &:hover,
-    &:focus {
-        background: #005fa3;
-    }
-}
-
 //Homepage Styles
 .banner{
-    background: url('../images/banner.jpg') no-repeat center center;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    height: 590px;
+    
+    height: 100vh;
 
     h1 {
-        font-size: 3em;
+        font-size: 70px;
         margin-bottom: 0.5em;
+        .text-name{
+            color: #ff5722;
+        }
     }
 
     p {
@@ -103,5 +89,25 @@ button {
         &:focus {
             background: #e64a19;
         }
+    }
+    .banner-video{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 0;
     }
 }
