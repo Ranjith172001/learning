@@ -35,3 +35,30 @@ function theme_gsap_script(){
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
+
+//Registerd Users
+add_action('wpcf7_mail_sent', 'cf7_register_new_user');
+function cf7_register_new_user($contact_form) {
+    $submission = WPCF7_Submission::get_instance();
+    if ($submission) {
+        $data = $submission->get_posted_data();
+
+        $name     = sanitize_text_field($data['your-name']);
+        $email    = sanitize_email($data['your-email']);
+        $password = sanitize_text_field($data['password']);
+
+        if (!email_exists($email)) {
+            $user_id = wp_create_user($email, $password, $email);
+            if (!is_wp_error($user_id)) {
+                wp_update_user([
+                    'ID'           => $user_id,
+                    'display_name' => $name,
+                    'nickname'     => $name,
+                ]);
+                // (Optional) assign role
+                $user = new WP_User($user_id);
+                $user->set_role('subscriber');
+            }
+        }
+    }
+}
