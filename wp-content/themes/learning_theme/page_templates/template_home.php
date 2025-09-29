@@ -22,6 +22,33 @@ get_header(); ?>
     </div>
     <div class="overlay"></div>
 </section>
+<!-- Banner Section End -->
+<!-- Sponser's Section Start -->
+<section class="p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Our Sponser's</h2>
+            </div>
+            <?php
+            // Get field value
+            $text = get_field('custom_field'); // Replace with your field name
+
+            // Check if field has value
+            if ($text) {
+                echo '<p>' . esc_html($text) . '</p>';
+            }
+            ?>
+        </div>
+    </div>
+</section>
+<!-- Sponser's Section End -->
+
+<!-- exhibitors logo start -->
+
+
+<!-- exhibitors logo end -->
+
 
 
 <?php get_template_part('template_parts/footer'); ?>

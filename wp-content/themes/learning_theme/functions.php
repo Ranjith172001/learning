@@ -35,6 +35,8 @@ function theme_gsap_script(){
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_gsap_script' );
+?>
+<?php
 
 //Registerd Users
 add_action('wpcf7_mail_sent', 'cf7_register_new_user');
@@ -62,3 +64,34 @@ function cf7_register_new_user($contact_form) {
         }
     }
 }
+?>
+<?php
+function custom_sponsors_post_type() {
+    $labels = array(
+        'name'          => 'Sponsors',
+        'singular_name' => 'Sponsor',
+        'menu_name'     => 'Sponsors',
+        'add_new_item'  => 'Add New Sponsor',
+        'edit_item'     => 'Edit Sponsor',
+    );
+
+    $args = array(
+        'labels'        => $labels,
+        'public'        => true,
+        'has_archive'   => false,
+        'menu_position' => 20,
+        'menu_icon'     => 'dashicons-groups',
+        'supports'      => array('title', 'thumbnail'),
+    );
+
+    register_post_type('sponsor', $args);
+}
+add_action('init', 'custom_sponsors_post_type');
+
+?>
+<?php
+$text = get_field('custom_field_text', 'option'); // 'option' is needed
+if( $text ) {
+    echo '<p>' . esc_html($text) . '</p>';
+}
+?>
