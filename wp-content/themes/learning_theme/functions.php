@@ -89,9 +89,3 @@ function custom_sponsors_post_type() {
 add_action('init', 'custom_sponsors_post_type');
 
 ?>
-<?php
-$text = get_field('custom_field_text', 'option'); // 'option' is needed
-if( $text ) {
-    echo '<p>' . esc_html($text) . '</p>';
-}
-?>
